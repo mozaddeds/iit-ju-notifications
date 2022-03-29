@@ -36,7 +36,7 @@ client.connect(err => {
     });
 
     app.get('/allnotices', (req, res) => {
-        noticeCollection.find()
+        noticeCollection.find().sort({_id:-1})
             .toArray((err, items) => {
                 res.send(items)
             })
